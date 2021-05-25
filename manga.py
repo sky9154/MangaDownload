@@ -48,7 +48,6 @@ def num(num,address):
                 except urllib.error.URLError as e:
                     print(e.reason)
                     print("下載完成")
-                    return("下載完成")
                     break
                 else:
                     if not os.path.isdir(nowpath):
@@ -59,7 +58,6 @@ def num(num,address):
                     imgurl = img.get('src')
                     ur.urlretrieve(imgurl, os.path.join(nowpath, str(i) + '.jpg'), reporthook=None, data=None)
                     print("已增加第" + str(i) + "頁。")
-                    return(str(i))
                     time.sleep(0.5)
 
         def start(self):

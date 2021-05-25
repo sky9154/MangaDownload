@@ -2,6 +2,7 @@
 
 import manga                              #漫畫下載模組
 from tkinter import filedialog     #檔案選擇視窗
+import os
 import tkinter as tk                    #視窗模組
 
 #-----------------------副程式---------------------
