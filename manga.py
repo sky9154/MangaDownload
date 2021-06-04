@@ -53,7 +53,7 @@ def num(num,address):
                     if not os.path.isdir(nowpath):
                         print("新增資料夾。")
                         os.mkdir(nowpath)
-                    html = bs(result)
+                    html = bs(result, "lxml")
                     img = html.select('section#image-container img')[0]
                     imgurl = img.get('src')
                     ur.urlretrieve(imgurl, os.path.join(nowpath, str(i) + '.jpg'), reporthook=None, data=None)
