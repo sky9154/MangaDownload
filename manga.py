@@ -3,8 +3,8 @@ import urllib
 import requests
 import os
 import time
-import random
 from bs4 import BeautifulSoup as bs
+
 def num(num, address):
     os.chdir(address)
     headers = {
@@ -15,7 +15,7 @@ def num(num, address):
             self.name = ""    # 漫畫編號
             self.origin = ""    # 漫畫連結
 
-        def checklink(self):    # 確認編號是否正確
+        def checkLink(self):    # 確認編號是否正確
             self.origin = "https://nhentai.net/g/" + self.name + "/"      #轉換成網址
             resp = requests.get(self.origin, headers = headers)
             if resp.status_code == 200:
@@ -27,47 +27,46 @@ def num(num, address):
                 print("連線錯誤，請重新輸入")
                 return False
 
-        def setlink(self):
+        def setLink(self):
             self.name = num
 
-        def setlink_error(self):    # 編號錯誤
+        def setLinkError(self):    # 編號錯誤
             print("編號錯誤 !!!\n 很抱歉，你只能去看桐桐了...")
             self.name = "371601"
             self.origin = "https://nhentai.net/g/"+ self.name +"/"
 
-        def setsail(self):
-            for i in range(1,10000):
+        def setDir(self):
+            for i in range(1,8763):
                 url = self.origin + str(i)
-                nowpath = os.path.abspath('./' + self.name)        #獲取當前路徑
+                newPath = os.path.abspath("./" + self.name)        #獲取當前路徑
 
                 try:
-                    req = ur.Request(url=url, headers=headers)
-                    result = ur.urlopen(req).read().decode('utf-8')
+                    req = ur.Request(url = url, headers = headers)
+                    result = ur.urlopen(req).read().decode("utf-8")
                 except urllib.error.URLError as e:
                     print("下載完成")
                     break
                 else:
-                    if not os.path.isdir(nowpath):
+                    if not os.path.isdir(newPath):
                         print("新增資料夾")
-                        os.mkdir(nowpath)
+                        os.mkdir(newPath)
                     html = bs(result, "lxml")
                     img = html.select("section#image-container img")[0]
-                    imgurl = img.get("src")
-                    ur.urlretrieve(imgurl, os.path.join(nowpath, str(i) + ".png"), reporthook=None, data=None)
+                    ur.urlretrieve(img.get("src"), os.path.join(newPath, str(i) + ".png"), reporthook = None, data = None)
                     print("已增加第" + str(i) + "頁")
-                    time.sleep(0.5)
+                    time.sleep(0.2)
 
         def start(self):
-            self.setlink()
+            self.setLink()
             while True:
-                if self.checklink():
+                if self.checkLink():
                     break
                 else:
-                    self.setlink_error()
+                    self.setLinkError()
                     break
             else:
-                self.setlink()
-            self.setsail()
+                self.setLink()
+            self.setDir()
 
     nh = nhview()
     nh.start()
