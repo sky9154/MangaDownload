@@ -36,7 +36,8 @@ python3 launcher.py
 ## 完整程式執行過程
 ### 編號下載
 
-![](https://i.imgur.com/tibhkGE.gif)
+![](https://github.com/sky9154/MangaDownload/blob/main/assets/number.gif)
+
 ### 隨機下載
 
-![](https://i.imgur.com/gBkqYQJ.gif)
+![](https://github.com/sky9154/MangaDownload/blob/main/assets/random.gif)
