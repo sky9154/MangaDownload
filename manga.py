@@ -5,7 +5,8 @@ import os
 import time
 import random
 from bs4 import BeautifulSoup as bs
-def num(num,address):
+def num(num, address):
+    print(type(num))
     os.chdir(address)
     class nhview:
         def __init__(self):
@@ -22,17 +23,22 @@ def num(num,address):
             self.origin = "https://nhentai.net/g/" + self.name + "/"      #轉換成網址
             resp = requests.get(self.origin, headers = headers)
             if resp.status_code == 200:
-                print("號碼：" + self.name)
+                print("編號：" + self.name)
                 print("連線成功")
                 return True
             else:
-                print("號碼：" + self.name)
+                print("編號：" + self.name)
                 print("連線代碼：" + str(resp.status_code))
                 print("連線錯誤，請重新輸入")
                 return False
 
         def setlink(self):
             self.name = num
+
+        def setlink_error(self):
+            print("編號錯誤 !!! 耖你媽滾去看桐桐 !!!")
+            self.name = "371601"
+            self.origin = "https://nhentai.net/g/371601/"
 
         def setsail(self):
             headers = {
@@ -62,13 +68,14 @@ def num(num,address):
 
         def start(self):
             self.setlink()
-
             while True:
-                if self.checklink() == True:
+                if self.checklink():
+                    break
+                else:
+                    self.setlink_error()
                     break
             else:
-                    self.setlink()
-        
+                self.setlink()
             self.setsail()
 
     nh = nhview()

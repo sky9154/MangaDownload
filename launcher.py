@@ -10,7 +10,7 @@ win.attributes('-topmost', 1)
 font = font.Font(family="DisposableDroid BB", size=30)
 
 def start_py():
-	os.system("D:\雜物\程式設計\Python\工具\漫畫下載器\Interface.py")
+	os.system("python ./main.py")
 	return
 
 btn = Button(win, text='START', command=start_py)

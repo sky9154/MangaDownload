@@ -15,11 +15,11 @@
     <form>
         <label>
             <h2>漫畫下載器</h2>
-            <input type="text" placeholder="輸入漫畫編號..."/>
+            <input type="text" placeholder="輸入漫畫編號..." id="number" autocomplete="off"/>
         </label>
         <div class="segment">
-            <button class="unit" type="button"><i class="icon ai-search"></i>Search</button>
-            <button class="unit" type="button"><i class="icon ai-arrow-shuffle"></i>Random</button>
+            <button class="unit" type="button" id="search" onclick="Search();"><i class="icon ai-search"></i>Search</button>
+            <button class="unit" type="button" id="random"><i class="icon ai-arrow-shuffle"></i>Random</button>
         </div>
     </form>
 <script src="./js/func.js"></script>
