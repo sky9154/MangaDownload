@@ -22,4 +22,4 @@ def download(number):   #漫畫下載
     else:
         print("請輸入正確的編號")
 eel.init("gui")    # 網頁的資料夾
-eel.start("main.html", size = (450, 250), port = 8763)    # 視窗大小，port 參數
+eel.start("index.html", size = (450, 250), port = 8763)    # 視窗大小，port 參數
