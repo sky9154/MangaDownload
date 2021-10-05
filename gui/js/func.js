@@ -12,6 +12,8 @@ number.addEventListener("keypress", e => {if (e.key == "Enter") Search()});
 
 function Search() {eel.download(number.value)};
 
+let max = 375615;    // 隨機漫畫的最大值
+
 getRandom = max => {return String(Math.floor(Math.random() * max) + 1)};
 
-random.addEventListener("click", () => {eel.download(getRandom(375615))});
+random.addEventListener("click", () => {eel.download(getRandom(max))});
