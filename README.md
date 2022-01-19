@@ -11,6 +11,7 @@ pip install requests
 pip install urllib3
 pip install beautifulsoup4
 pip install Eel
+pip install lxml
 ```
 例如你已經安裝過 Eel 了，就可以把 `pip install Eel` 給移除掉在雙擊 `install.bat` ，即可安裝必要的項目
 
