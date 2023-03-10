@@ -13,7 +13,7 @@ pip install beautifulsoup4
 pip install Eel
 pip install lxml
 ```
-例如你已經安裝過 Eel 了，就可以把 `pip install Eel` 給移除掉在雙擊 `install.bat` ，即可安裝必要的項目
+例如你已經安裝過 Eel 了，就可以把 `pip install Eel` 給移除掉，再雙擊 `install.bat` ，即可安裝必要的項目
 
 ### 2.安裝漫畫下載器
 從 [Github](https://github.com/sky9154/MangaDownload) 上進行手動下載，或是使用 git 下載完整程式碼：
